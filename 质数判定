@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+//判定质数
+bool isPrime(int a)
+{
+    if(a<2)return false;//当执行return语句时，函数立即结束
+    for(int i=2;i*i<=a;i++)
+    {
+        if(a%i==0)return false;
+    }
+    return true;
+}
+int main()
+{
+    //输出【1，100】质数的总和、数量
+    int sum=0,cnt=0;
+    for(int i=1;i<=100;i++)
+    {
+        //如果i是质数，sum+=i,cnt++
+        if(isPrime(i))
+        {
+            sum+=i;
+            cnt++;
+        }
+    }
+    cout<<sum<<" "<<cnt;
+    return 0;
+}
