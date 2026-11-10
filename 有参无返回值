@@ -1,0 +1,20 @@
+//输入三个int，按从小到大顺序输出
+#include<iostream>
+using namespace std;
+void f(int& a,int& b)//，a和b是引用调用的形参，形参值的改变会同步修改实参
+{
+    int t=a;
+    a=b;
+    b=t;
+}
+int main()
+{
+    int a,b,c;
+    cin>>a>>b>>c;
+    if(a>b)f(a,b);
+    if(a>c)f(a,c);
+    if(b>c)f(b,c);//引用调用时，实参必须是左值
+    cout<<a<<" "<<b<<" "<<c;
+    return 0;
+}
+
